@@ -1,19 +1,26 @@
-📌 Project Overview
-This is a Flutter-based Smart Home Controller app that uses MQTT protocol to control and monitor smart devices like:
-Light 💡
-Fan 🌬️
-AC ❄️
-The app provides real-time communication between mobile app and MQTT broker.
 
-⚙️ Features
-🔌 MQTT Connection Setup (Broker + Client ID)
-💡 Light ON/OFF control
-🌬️ Fan ON/OFF control
-❄️ AC ON/OFF control
-🔄 Real-time state updates using MQTT
-📡 Live communication via topics
+# 🏠 Smart Home Controller (Flutter + MQTT)
 
-🧩 Project Structure
+## 📌 Project Overview
+
+This is a Flutter-based Smart Home Controller app that uses MQTT protocol to control and monitor smart devices like Light, Fan, and AC in real-time.
+
+---
+
+## ⚙️ Features
+
+* MQTT Connection (Broker + Client ID)
+* Light ON/OFF control 💡
+* Fan ON/OFF control 🌬️
+* AC ON/OFF control ❄️
+* Real-time device state updates
+* MQTT publish/subscribe communication
+
+---
+
+## 🧩 Project Structure
+
+```
 lib/
 │
 ├── main.dart
@@ -30,63 +37,110 @@ lib/
 └── screens/
     ├── connection_screen.dart
     └── dashboard_screen.dart
-    
-🌐 MQTT Configuration
-Broker Used:
-test.mosquitto.org
-Port:
-1883
-📡 MQTT Topics
-Device	Topic	Payload
-Light	home/light	ON/OFF
-Fan	home/fan	ON/OFF
-AC	home/ac	ON/OFF
+```
 
-🧪 How to Test
-Step 1: Run MQTTX
-Use MQTTX or any MQTT client.
-Step 2: Connect
-Broker: test.mosquitto.org
+---
+
+## 🌐 MQTT Configuration
+
+**Broker:**
+test.mosquitto.org
+
+**Port:**
+1883
+
+---
+
+## 📡 MQTT Topics
+
+* home/light → ON / OFF
+* home/fan → ON / OFF
+* home/ac → ON / OFF
+
+---
+
+## 🧪 How to Test
+
+### 1. Open MQTTX
+
+Connect to broker:
+
+```
+test.mosquitto.org
 Port: 1883
-Step 3: Subscribe Topics
+```
+
+### 2. Subscribe Topics
+
+```
 home/light
 home/fan
 home/ac
-Step 4: Test Publishing
-Publish messages like:
+```
+
+### 3. Test Publishing
+
+Send messages:
+
+```
 ON
 OFF
+```
+
 Example:
-Publish ON → Light turns ON in app
-Publish OFF → Light turns OFF in app
-📱 App Flow
-Open App
-Enter Broker URL + Client ID
-Click Connect
-Open Dashboard
-Control devices using switches
-See real-time updates via MQTT
 
-🧠 Technologies Used
-Flutter 🐦
-Dart 💙
-MQTT Protocol 📡
-mqtt_client package
-flutter_riverpod (State Management)
+* Publish ON → Device turns ON in app
+* Publish OFF → Device turns OFF in app
 
-🚀 How to Run Project
-1. Install dependencies
+---
+
+## 📱 App Flow
+
+1. Open app
+2. Enter broker URL + Client ID
+3. Click Connect
+4. Open Dashboard
+5. Control devices using switches
+6. See real-time updates
+
+---
+
+## 🧠 Technologies Used
+
+* Flutter
+* Dart
+* MQTT Protocol
+* mqtt_client package
+* Riverpod (State Management)
+
+---
+
+## 🚀 Run Project
+
+```bash
 flutter pub get
-2. Run app
 flutter run
-📦 Build APK (Optional)
-flutter build apk
-APK location:
-build/app/outputs/flutter-apk/app-release.apk
+```
 
-📊 Evaluation Coverage
-✔ Functionality: Device control via MQTT
-✔ Real-time updates
-✔ Clean architecture (separation of logic & UI)
-✔ Proper topic-based communication
-✔ State management using Riverpod
+---
+
+## 📦 Build APK
+
+```bash
+flutter build apk
+```
+
+APK location:
+
+```
+build/app/outputs/flutter-apk/app-release.apk
+```
+
+---
+
+## 👨‍💻 Note
+
+This project demonstrates real-time IoT communication using MQTT protocol with Flutter mobile application.
+
+---
+
